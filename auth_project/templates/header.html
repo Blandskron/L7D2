@@ -1,0 +1,17 @@
+<nav class="navegacion">
+    <div class="headerlogo">
+        <img width="48" height="48" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-home-folder-tanah-basah-glyph-tanah-basah.png" alt="external-home-folder-tanah-basah-glyph-tanah-basah"/>
+    </div>
+    <div class="navseccion">
+        <ul>
+            {% if user.is_authenticated %}
+                <li><p>Welcome, {{ user.username }}!</p></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
